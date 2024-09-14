@@ -1,1 +1,1 @@
-# Quality_Thrifts
+# Quality-Thrifts
