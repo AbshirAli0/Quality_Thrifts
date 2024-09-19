@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'main_app',
     'clothes',
-    'corsheaders'
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,8 +44,8 @@ INSTALLED_APPS = [
 
 #CORS settings to allow requests from Frontend To Backend
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = ['http://localhost:8000']
-CORS_TRUSTED_ORIGINS = ['http://localhost:8000']
+CORS_ALLOWED_ORIGINS = ['http://localhost:5173']
+CORS_TRUSTED_ORIGINS = ['http://localhost:5173']
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
