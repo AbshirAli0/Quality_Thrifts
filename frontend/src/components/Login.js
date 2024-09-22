@@ -18,13 +18,17 @@ const Login = () => {
       setError(error.message);
     }
   };
-
+  const redirectToRegister = () => {
+    navigate('/register'); // Redirect to register page
+  };
   return (
     <div>
       <h2>Login</h2>
       <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
       <button onClick={handleLogin}>Login</button>
+      <h3>If you don't have an account, click this button</h3>
+      <button onClick={redirectToRegister} >Here</button>
       {error && <p>{error}</p>}
     </div>
   );
