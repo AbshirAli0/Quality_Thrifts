@@ -1,6 +1,6 @@
 const {initializeApp} = require('firebase/app');
 const  {getAuth} =  require('firebase/auth');
-
+const { getFirestore } = require('firebase/firestore')
 const firebaseConfig = {
     apiKey: "AIzaSyDQfx4SFrjg3XMpeYcmmkJl1QWe8dc_sro",
     authDomain: "quality-thrifts.firebaseapp.com",
@@ -11,10 +11,11 @@ const firebaseConfig = {
     measurementId: "G-6SF6CGDKKB"
   };
 
-  const app = initializeApp(firebaseConfig)
-  console.log(app)
-  const auth = getAuth(app)
+const app = initializeApp(firebaseConfig)
+console.log(app)
+const auth = getAuth(app)
 
+const db = getFirestore(app)
 
-module.exports = {app,auth};
+export {db,app,auth};
 
