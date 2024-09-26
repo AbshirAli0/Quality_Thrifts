@@ -1,4 +1,3 @@
-// Home.js
 import React, { useEffect, useState } from 'react';
 import { fetchItems } from '../addClothes';
 import { useAuth } from '../context/AuthContext';
@@ -6,7 +5,7 @@ import './index.css';
 
 const Home = () => {
   const [items, setItems] = useState([]);
-  const { currentUser } = useAuth(); 
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     const getItems = async () => {
@@ -23,18 +22,32 @@ const Home = () => {
   }, [currentUser]);
 
   return (
-    <div>
-      <h1>signed in as: {currentUser?.email}</h1>
-      <h2>Quality Thrifts</h2>
-      <p>Items For Sale: </p>
-      <ul>
-        {items.map(item => (
-          <li key={item.id}>
+    <div className="bg-custom-color text-white p-8 min-h-screen">
+      <p className="text-2x font-bold text-right">Signed in as: {currentUser?.email}</p>
+      <h2 className="text-5xl mt-4 text-center font-bold">Quality Thrifts</h2>
 
-            <h3>{item.brand}</h3>
-          </li>
-        ))}
-      </ul>
+      <nav className="text-center mt-6 ">
+        <a href="#home" className="nav-link text-white hover:text-gray-400 text-xl">Home</a>
+        <a href="cart" className="nav-link text-white hover:text-gray-400 text-xl">Cart</a>
+        <a href="#contact" className="nav-link text-white hover:text-gray-400 text-xl">About</a>
+        <a href="sign-out" className="nav-link text-white hover:text-gray-400 text-xl">Sign Out</a>
+        
+      </nav>
+
+      <div className="bg-gray-800 p-6 rounded-lg mt-4">
+        <p className="mt-2">Items For Sale:</p>
+
+        <div className="flex flex-wrap justify-center">
+          {items.map(item => (
+            <div key={item.id} className="w-1/3 p-2">
+              <div className=" p-4 rounded-lg text-center" >
+                <h3 className="text-lg font-semibold">{item.brand}</h3>
+                <p className="mt-2">Price: ${item.price}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
