@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { fetchItems } from '../addClothes';
+import { auth } from '../firebase'; // Import the Firebase auth instance
 import { useAuth } from '../context/AuthContext';
+import { signOut } from 'firebase/auth'; // Import the signOut function
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 import './index.css';
 
 const Home = () => {
   const [items, setItems] = useState([]);
   const { currentUser } = useAuth();
-
+  const navigate = useNavigate()
   useEffect(() => {
     const getItems = async () => {
       if (currentUser) {
@@ -21,6 +24,14 @@ const Home = () => {
     getItems();
   }, [currentUser]);
 
+const handleSignOut = async () => {
+  try{
+    await signOut(auth)
+    navigate('/login')
+  } catch (error) {
+    console.log('Sign out errer', error.message)
+  }
+}
   return (
     <div className="bg-custom-color text-white p-8 min-h-screen">
       <p className="text-2x font-bold text-right">Signed in as: {currentUser?.email}</p>
@@ -30,7 +41,7 @@ const Home = () => {
         <a href="#home" className="nav-link text-white hover:text-gray-400 text-xl">Home</a>
         <a href="cart" className="nav-link text-white hover:text-gray-400 text-xl">Cart</a>
         <a href="#contact" className="nav-link text-white hover:text-gray-400 text-xl">About</a>
-        <a href="sign-out" className="nav-link text-white hover:text-gray-400 text-xl">Sign Out</a>
+        <a onClick = {handleSignOut} className="nav-link text-white hover:text-gray-400 text-xl">Sign Out</a>
         
       </nav>
 
