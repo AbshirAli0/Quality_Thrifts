@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { fetchItems } from '../addClothes';
-import { auth } from '../firebase'; // Import the Firebase auth instance
+import { auth } from '../firebase'; 
 import { useAuth } from '../context/AuthContext';
-import { signOut } from 'firebase/auth'; // Import the signOut function
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
+import { signOut } from 'firebase/auth'; 
+import { useNavigate } from 'react-router-dom'; 
 import './index.css';
 
 const Home = () => {
