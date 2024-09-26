@@ -36,7 +36,6 @@ const Home = () => {
 
       <div className="bg-gray-800 p-6 rounded-lg mt-4">
         <p className="mt-2">Items For Sale:</p>
-
         <div className="flex flex-wrap justify-center">
           {items.map(item => (
             <div key={item.id} className="w-1/3 p-2">
