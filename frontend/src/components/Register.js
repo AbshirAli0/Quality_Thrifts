@@ -13,7 +13,7 @@ const Register = () => {
   const handleRegister = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate('/login')
+    navigate('/login', {state: {email, password}})
       console.log('Registration successful');
     } catch (error) {
       setError(error.message);
