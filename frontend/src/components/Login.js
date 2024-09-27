@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
@@ -10,9 +10,21 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
   const { currentUser } = useAuth();
 
-
+  useEffect(() => {
+    if (location.state) {
+      if (location.state.email) {
+        setEmail(location.state.email);
+      }
+      if (location.state.password) {
+        setPassword(location.state.password);
+      }
+    }
+  }, [location.state])
+  
+  
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
