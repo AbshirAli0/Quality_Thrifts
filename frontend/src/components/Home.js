@@ -43,7 +43,7 @@ const Home = () => {
 
       <nav className="text-center mt-6 ">
         <a onClick={() => navigate('/')} className="nav-link text-white hover:text-gray-400 text-xl">Home</a>
-        <a href="cart" className="nav-link text-white hover:text-gray-400 text-xl">Cart</a>
+        <a onClick={() => navigate('/cart')} className="nav-link text-white hover:text-gray-400 text-xl">Cart</a>
         <a onClick={() => navigate('/about')}className="nav-link text-white hover:text-gray-400 text-xl">About</a>
         <a onClick = {handleSignOut} className="nav-link text-white hover:text-gray-400 text-xl">Sign Out</a>
         
