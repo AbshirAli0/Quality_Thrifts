@@ -24,14 +24,17 @@ const Home = () => {
     getItems();
   }, [currentUser]);
 
-const handleSignOut = async () => {
-  try{
-    await signOut(auth)
-    navigate('/login')
-  } catch (error) {
-    console.log('Sign out errer', error.message)
-  }
-}
+  const handleSignOut = async () => {
+    try {
+      if (currentUser?.email) {
+        localStorage.setItem('currentUserEmail', currentUser.email);
+      }
+      await signOut(auth);
+      navigate('/login');
+    } catch (error) {
+      console.log('sign out error', error.message);
+    }
+  };
 
   return (
     <div className="bg-custom-color text-white p-8 min-h-screen">
