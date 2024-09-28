@@ -10,25 +10,30 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const location = useLocation();
   const { currentUser } = useAuth();
 
   useEffect(() => {
-    if (location.state) {
-      if (location.state.email) {
-        setEmail(location.state.email);
-      }
-      if (location.state.password) {
-        setPassword(location.state.password);
-      }
+   
+    const storedEmail = localStorage.getItem('registeredEmail');
+    const storedPassword = localStorage.getItem('registeredPassword');
+
+    if (storedEmail) {
+      setEmail(storedEmail);
     }
-  }, [location.state])
+
+    if (storedPassword) {
+      setPassword(storedPassword);
+    }
+  }, []);
+
   
   
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log('Login successful');
+      localStorage.removeItem('registeredPassword');
+
       navigate('/');
     } catch (error) {
       setError(error.message);

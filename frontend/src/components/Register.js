@@ -13,7 +13,11 @@ const Register = () => {
   const handleRegister = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-    navigate('/login', {state: {email, password}})
+    
+      localStorage.setItem('registeredEmail', email);
+      localStorage.setItem('registeredPassword', password);
+
+      navigate('/login')
       console.log('Registration successful');
     } catch (error) {
       setError(error.message);

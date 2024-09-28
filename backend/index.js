@@ -6,25 +6,27 @@ const bodyParser = require("body-parser");
 const path = require("path");
 require('dotenv').config(); 
 const router = express();
-const port = process.env.PORT || 6000;
 require('./routes/router')(router)
 
 //middleware
 
-admin.initializeApp({
-  credential: admin.credential.applicationDefault(),
-});
+const port = process.env.PORT || 6000;
 router.use(cors());
 router.use(bodyParser.json());
 router.use(express.static(path.join(__dirname, '../frontend/build')));
 
-//react build
+admin.initializeApp({
+  credential: admin.credential.applicationDefault(),
+});
+
+
+//react build catch all route
 router.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 
 
-//Listener
+//Listener 
 router.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
