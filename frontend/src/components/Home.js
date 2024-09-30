@@ -50,7 +50,7 @@ const addToCart = (item) => {
     navigate(`/clothes/${id}`);  
   }
 
-
+console.log(items)
   return (
     <div className="bg-custom-color text-white p-8 min-h-screen">
      <Header  
@@ -67,6 +67,7 @@ const addToCart = (item) => {
             <div key={item.id} className="w-1/3 p-2">
               <div className=" p-4 rounded-lg text-center" >
                 <h3 onClick={() => navigateToDetail(item.id)}  className="text-lg font-semibold">{item.brand}</h3>
+                <img src={item.url} className="w-32 h-auto mx-auto rounded" />
                 <p className="mt-2">Price: ${item.price}</p>
                 <button onClick={() => addToCart(item)}className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-500 mt-2">add to cart</button>
               </div>
