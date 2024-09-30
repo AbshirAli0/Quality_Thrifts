@@ -34,7 +34,7 @@ const Login = () => {
       console.log('Login successful');
       localStorage.removeItem('registeredPassword');
 
-      navigate('/');
+      navigate('/clothes');
     } catch (error) {
       setError(error.message);
     }
