@@ -35,14 +35,15 @@ const About = () => {
   
     return (
         <div className="bg-custom-color text-white p-8 min-h-screen">
-        <p className="text-2x font-bold text-right">Signed in as: {currentUser?.email}</p>
-         <h2 className="text-5xl mt-4 text-center font-bold">Quality Thrifts</h2>
-
+         <div className="text-2x font-bold text-right">
+          <p >Signed in as: {currentUser?.email}</p>
+          <button onClick = {handleSignOut} className='w-50 bg-red-600 text-white p-1 rounded hover:bg-red-900 mt-1'>Sign Out</button>
+        </div>         
+        <h2 className="text-5xl mt-4 text-center font-bold">Quality Thrifts</h2>
         <nav className="text-center mt-6 ">
         <a onClick={() => navigate('/')} className="nav-link text-white hover:text-gray-400 text-xl">Home</a>
         <a href="cart" className="nav-link text-white hover:text-gray-400 text-xl">Cart</a>
         <a onClick={() => navigate('/about')}className="nav-link text-white hover:text-gray-400 text-xl">About</a>
-        <a onClick = {handleSignOut} className="nav-link text-white hover:text-gray-400 text-xl">Sign Out</a> 
         </nav>
         <div className="bg-gray-800 p-6 rounded-lg mt-4">
         <h1 className="text-3xl mt-4 text-center ">Hello! this is about us</h1>
