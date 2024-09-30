@@ -50,8 +50,10 @@ const Cart = () => {
               {cartItems.map((item, index) => (
                 <div key={index} className="w-1/3 p-2">
                   <div className="p-4 rounded-lg text-center">
+                  <img src={item.url} className="w-32 h-auto mx-auto rounded" />
                     <h3 className="text-lg font-semibold">{item.brand}</h3>
                     <p className="mt-2">Price: ${item.price}</p>
+                    <p>size:  {item.size}</p>
                     <button onClick={() => removeFromCart(item)} className="w-full bg-red-600 text-white p-2 rounded hover:bg-red-500 mt-2">Remove From Cart</button>
                   </div>
                 </div>

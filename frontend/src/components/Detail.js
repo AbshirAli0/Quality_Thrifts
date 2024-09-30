@@ -62,8 +62,10 @@ const Detail = () => {
      />
 
       <div className="bg-gray-800 p-6 rounded-lg mt-4">
+      <img src={item.url} className="w-32 h-auto mx-auto rounded" />
         <h1 className="text-3xl mt-4 text-center">{item.brand}</h1>
-        <p className="text-center text-xl mt-2">Price: ${item.price}</p>
+        <p className="text-center text-l mt-2">Price: ${item.price}</p>
+        <p className="text-center text-l mt-2">Size {item.size}</p>
         <p className="text-center mt-2">Description: {item.description || 'No description available'}</p>
       </div>
     </div>
