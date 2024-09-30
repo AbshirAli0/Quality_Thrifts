@@ -36,6 +36,14 @@ const Home = () => {
     }
   };
 
+const addToCart = (item) => {
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    cart.push(item)
+    localStorage.setItem('cart', JSON.stringify(cart))
+    console.log('added to cart')
+    alert(`${item.brand} added to cart`)
+  }
+
   return (
     <div className="bg-custom-color text-white p-8 min-h-screen">
       <div className="text-2x font-bold text-right">
@@ -57,7 +65,7 @@ const Home = () => {
               <div className=" p-4 rounded-lg text-center" >
                 <h3 className="text-lg font-semibold">{item.brand}</h3>
                 <p className="mt-2">Price: ${item.price}</p>
-                <button className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-500 mt-2">add to cart</button>
+                <button onClick={() => addToCart(item)}className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-500 mt-2">add to cart</button>
               </div>
             </div>
           ))}
