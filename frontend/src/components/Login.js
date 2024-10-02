@@ -48,8 +48,8 @@ const Login = () => {
     <div className="flex items-center justify-center min-h-screen bg-custom-color">
       <div className="bg-gray-800 p-8 rounded-lg shadow-md w-96">
       <h2 className="text-2xl font-bold text-center text-white mb-4">Login</h2>
-      <input type="email" placeholder="Email" className="w-full p-2 mb-4 rounded" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input  type={showPassword ? 'text' : 'password'} className="w-full p-2 mb-4 rounded"placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      <input type="email" placeholder="Email" className="w-full p-2 mb-4 rounded text-black" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input  type={showPassword ? 'text' : 'password'} className="w-full p-2 mb-4 rounded text-black"placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
       <div className='flex items-center mb-4'>
       <input type='checkbox' checked={showPassword} onChange={(e) => setShowPassword(e.target.checked)} />
       <label className="text-white ml-2">Show password</label>
