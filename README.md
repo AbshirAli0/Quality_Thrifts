@@ -6,12 +6,11 @@ The purpose of this app is to create an online clothing store where a user is ca
 
 # User Stories
 
-AAU, I should be able to view all clothes
-AAU, I should be able to view a details page of a particular item
-AAU, I should be able to add/remove items into my cart
-AAU, I should be able to succesfully register as a user
-AAU, I should be able to successfully login with user info
-AAU, I should be able to successfully sign out out
-
+- AAU, I should be able to view all clothes
+- AAU, I should be able to view a details page of a particular item
+- AAU, I should be able to add/remove items into my cart
+- AAU, I should be able to succesfully register as a user
+- AAU, I should be able to successfully login with user info
+- AAU, I should be able to successfully sign out out
 
 
