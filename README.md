@@ -13,4 +13,4 @@ The purpose of this app is to create an online clothing store where a user is ca
 - AAU, I should be able to successfully login with user info
 - AAU, I should be able to successfully sign out out
 
-c
+
