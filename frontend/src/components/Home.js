@@ -9,6 +9,7 @@ import './Header'
 import Header from './Header';
 
 const Home = () => {
+  const [isCartActive, setIsCartActive] = useState(false)
   const [items, setItems] = useState([]);
   const { currentUser } = useAuth();
   const navigate = useNavigate()
@@ -44,6 +45,7 @@ const addToCart = (item) => {
     localStorage.setItem('cart', JSON.stringify(cart))
     console.log('added to cart')
     alert(`${item.brand} added to cart`)
+    setIsCartActive(true)
   }
 
   const navigateToDetail = (id) => {
