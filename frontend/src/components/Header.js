@@ -1,6 +1,8 @@
 import React from "react";
 
-function Header({currentUser, navigate, handleSignOut}) {
+function Header({ currentUser, navigate, handleSignOut }) {
+  const cartItems = JSON.parse(localStorage.getItem('cart') || [])
+console.log(cartItems)
   return (
     <>
       <div className="text-2x font-bold text-right">
@@ -21,7 +23,7 @@ function Header({currentUser, navigate, handleSignOut}) {
           Home
         </a>
         <a
-          onClick={() => navigate("/cart")}
+          onClick={ () => cartItems.length > 0 && navigate("/cart")}
           className="nav-link text-white hover:text-gray-400 text-xl"
         >
           Cart
