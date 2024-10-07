@@ -42,7 +42,7 @@ useEffect(() => {
           onClick={redirectToRegister}
           className="text-3xl w-full buttons border-2 border-black text-red-600 p-2 rounded hover:bg-black fade-in-button"
         >
-          Register
+          Register;
         </button>
       </div>
     </div>
