@@ -29,7 +29,7 @@ useEffect(() => {
 }, [])
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white">
-      <h1 className="text-4xl mb-12 font-title text-red-600 fade-in-title" >⚽️ SportsCore/ ⚽️</h1>
+      <h1 className="text-4xl mb-12 font-title text-red-600 fade-in-title" >⚽️ SportsCore ⚽️</h1>
 
       <div className="flex flex-row space-x-20 mt-12 w-2/5">
         <button
@@ -42,7 +42,7 @@ useEffect(() => {
           onClick={redirectToRegister}
           className="text-3xl w-full buttons border-2 border-black text-red-600 p-2 rounded hover:bg-black fade-in-button"
         >
-          Register;
+          Register
         </button>
       </div>
     </div>
